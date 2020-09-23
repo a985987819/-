@@ -156,13 +156,21 @@ console.log(dom.siblings(dom.find('#ae2')[0]));
 console.log(dom.next(dom.find('#ae2')[0]));
 console.log(dom.previous(dom.find('#ae2')[0]));
 var t = dom.find('#travel')[0];
-console.log('滴滴，来了');
-console.log(dom.find('#travel'));
+console.log('滴滴，t要来了'); // console.log(dom.find('#travel')[0])
+
 console.log(t); // console.log(111111111)
 
-dom.each(dom.children(t), function (n) {
-  return dom.style(n, 'color', 'red');
-});
+dom.style(t1, 'color', 'red');
+
+var fn3 = function fn3(node) {
+  console.log('当前的node节点是：');
+  console.log(node);
+  return dom.style(node, 'color', 'red');
+};
+
+dom.each(dom.children(t), fn3);
+dom.each(t, fn3);
+console.log(2222);
 console.log(dom.index(s2));
 },{}],"C:/Users/laoduan/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -192,7 +200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60286" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50837" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

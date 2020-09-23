@@ -77,13 +77,17 @@ window.dom = {
   },
     style(node,name,value){
       if (arguments.length === 3){
+          console.log('现在传进来的参数有3个')
           //dom.style('div','color','red')
           node.style[name] = value
       }else if(arguments.length ===2){
+          console.log('现在传进来的参数有2个')
           if(typeof name === 'string'){
-              //dom.style(div,'color)
+              console.log('name是字符串')
+              //dom.style(div,'color')
               return node.style[name]
           }else if(name instanceof Object){
+              console.log('name是对象')
               //dom.style(div,{color:'red'})
               const object = name
               for (let key in object){
@@ -117,7 +121,7 @@ window.dom = {
       return node.parentNode
     },
     children(node){
-      return node.childNodes
+      return node.children
     },
     siblings(node){
       //只要看到的这个子节点不是传入的结点，就返回
@@ -141,7 +145,7 @@ window.dom = {
     each(nodeList,fn){
         console.log('这是我')
       for(let i=0;i<nodeList.length;i++){
-          console.log('出错了吗')
+          // console.log('出错了吗')
         fn.call(null,nodeList[i])
       }
     },

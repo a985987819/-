@@ -57,14 +57,20 @@ console.log(dom.next(dom.find('#ae2')[0]))
 console.log(dom.previous(dom.find('#ae2')[0]))
 
 const t = dom.find('#travel')[0]
-console.log('滴滴，来了')
-console.log(dom.find('#travel'))
+console.log('滴滴，t要来了')
+// console.log(dom.find('#travel')[0])
 console.log(t)
 // console.log(111111111)
 
-
-dom.each(dom.children(t),(n)=>dom.style(n,'color','red'))
-
+dom.style(t1,'color','red')
+let fn3 = (node)=>{
+    console.log('当前的node节点是：')
+    console.log(node)
+    return dom.style(node,'color','red')
+}
+dom.each(dom.children(t),fn3)
+dom.each(t,fn3)
+console.log(2222)
 
 
 console.log(dom.index(s2))

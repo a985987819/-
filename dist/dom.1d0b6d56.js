@@ -194,14 +194,19 @@ window.dom = {
   },
   style: function style(node, name, value) {
     if (arguments.length === 3) {
-      //dom.style('div','color','red')
+      console.log('现在传进来的参数有3个'); //dom.style('div','color','red')
+
       node.style[name] = value;
     } else if (arguments.length === 2) {
+      console.log('现在传进来的参数有2个');
+
       if (typeof name === 'string') {
-        //dom.style(div,'color)
+        console.log('name是字符串'); //dom.style(div,'color')
+
         return node.style[name];
       } else if (name instanceof Object) {
-        //dom.style(div,{color:'red'})
+        console.log('name是对象'); //dom.style(div,{color:'red'})
+
         var object = name;
 
         for (var key in object) {
@@ -235,7 +240,7 @@ window.dom = {
     return node.parentNode;
   },
   children: function children(node) {
-    return node.childNodes;
+    return node.children;
   },
   siblings: function siblings(node) {
     //只要看到的这个子节点不是传入的结点，就返回
@@ -265,7 +270,7 @@ window.dom = {
     console.log('这是我');
 
     for (var i = 0; i < nodeList.length; i++) {
-      console.log('出错了吗');
+      // console.log('出错了吗')
       fn.call(null, nodeList[i]);
     }
   },
@@ -311,7 +316,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60286" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50837" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
